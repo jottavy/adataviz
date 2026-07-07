@@ -343,7 +343,7 @@ main {
   color: var(--red-heart);
 }
 
-.card-location {
+.card-type {
   color: var(--text-gray);
   font-size: 15px;
   margin: 10px 0 16px;
