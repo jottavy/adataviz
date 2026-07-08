@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Les Jardins Partagés</title>
-<script type="module" src="/src/main.js"></script>
+<link rel="stylesheet" href="src/style.css">
+<!-- <script type="module" src="/src/main.js"></script> -->
 </head>
 <body>
 
@@ -18,77 +19,80 @@
 
   <div class="favorites">
     <span><i class="fa fa-heart"></i></span>
-    <span><a href="favoris.html">Mes jardins favoris (1)</a></span>
+    <span><a href="#">Mes jardins favoris (1)</a></span>
   </div>
 </header>
 
 <main>
+
+<div class="search-filters-panel">
   <div class="search-bar">
     <span class="search-icon"><i class="fa fa-search"></i></span>
     <input type="text" placeholder="Rechercher un jardin, une rue...">
   </div>
 
-<form class="filters">
-  <span class="filters-label">Filtrer par :</span>
+  <!-- Système de filtres -->
+  <form class="filters">
+    <span class="filters-label"><i class="fa fa-sliders"></i> Filtres (Bientôt disponible)</span>
 
-  <details class="filter-select">
-    <summary>Arrondissement <span class="badge-count"></span><span class="chevron">▾</span></summary>
-    <fieldset class="filter-options">
-      <label><input type="checkbox" name="arrondissement" value="1er"> 1er arr</label>
-      <label><input type="checkbox" name="arrondissement" value="2eme"> 2ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="3eme"> 3ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="4eme"> 4ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="5eme"> 5ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="6eme"> 6ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="7eme"> 7ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="8eme"> 8ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="9eme"> 9ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="10eme"> 10ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="11eme"> 11ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="12eme"> 12ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="13eme"> 13ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="14eme"> 14ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="15eme"> 15ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="16eme"> 16ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="17eme"> 17ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="18eme"> 18ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="19eme"> 19ème arr</label>
-      <label><input type="checkbox" name="arrondissement" value="20eme"> 20ème arr</label>
-    </fieldset>
-  </details>
+    <details class="filter-select">
+      <summary>Arrondissement <span class="badge-count"></span><span class="chevron">▾</span></summary>
+      <fieldset class="filter-options">
+        <label><input type="checkbox" name="arrondissement" value="1er"> 1er arr</label>
+        <label><input type="checkbox" name="arrondissement" value="2eme"> 2ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="3eme"> 3ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="4eme"> 4ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="5eme"> 5ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="6eme"> 6ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="7eme"> 7ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="8eme"> 8ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="9eme"> 9ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="10eme"> 10ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="11eme"> 11ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="12eme"> 12ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="13eme"> 13ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="14eme"> 14ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="15eme"> 15ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="16eme"> 16ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="17eme"> 17ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="18eme"> 18ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="19eme"> 19ème arr</label>
+        <label><input type="checkbox" name="arrondissement" value="20eme"> 20ème arr</label>
+      </fieldset>
+    </details>
 
-  <details class="filter-select">
-    <summary>Animateurs <span class="badge-count"></span><span class="chevron">▾</span></summary>
-    <fieldset class="filter-options">
-      <label><input type="checkbox" name="animateurs" value="baleine-verte"> Association La Baleine Verte</label>
-      <label><input type="checkbox" name="animateurs" value="fleurs-de-ville"> Association Fleurs de Ville</label>
-      <label><input type="checkbox" name="animateurs" value="jardins-solidaires"> Collectif Jardins Solidaires</label>
-      <label><input type="checkbox" name="animateurs" value="ville-de-paris"> Ville de Paris</label>
-      <label><input type="checkbox" name="animateurs" value="benevoles"> Bénévoles indépendants</label>
-    </fieldset>
-  </details>
+    <details class="filter-select">
+      <summary>Animateurs <span class="badge-count"></span><span class="chevron">▾</span></summary>
+      <fieldset class="filter-options">
+        <label><input type="checkbox" name="animateurs" value="baleine-verte"> Association La Baleine Verte</label>
+        <label><input type="checkbox" name="animateurs" value="fleurs-de-ville"> Association Fleurs de Ville</label>
+        <label><input type="checkbox" name="animateurs" value="jardins-solidaires"> Collectif Jardins Solidaires</label>
+        <label><input type="checkbox" name="animateurs" value="ville-de-paris"> Ville de Paris</label>
+        <label><input type="checkbox" name="animateurs" value="benevoles"> Bénévoles indépendants</label>
+      </fieldset>
+    </details>
 
-  <details class="filter-select">
-    <summary>Autour de moi <span class="badge-count"></span><span class="chevron">▾</span></summary>
-    <fieldset class="filter-options">
-      <label><input type="checkbox" name="distance" value="500m"> Moins de 500 m</label>
-      <label><input type="checkbox" name="distance" value="1km"> Moins de 1 km</label>
-      <label><input type="checkbox" name="distance" value="2km"> Moins de 2 km</label>
-      <label><input type="checkbox" name="distance" value="5km"> Moins de 5 km</label>
-      <label><input type="checkbox" name="distance" value="10km"> Moins de 10 km</label>
-    </fieldset>
-  </details>
+    <details class="filter-select">
+      <summary>Autour de moi <span class="badge-count"></span><span class="chevron">▾</span></summary>
+      <fieldset class="filter-options">
+        <label><input type="checkbox" name="distance" value="500m"> Moins de 500 m</label>
+        <label><input type="checkbox" name="distance" value="1km"> Moins de 1 km</label>
+        <label><input type="checkbox" name="distance" value="2km"> Moins de 2 km</label>
+        <label><input type="checkbox" name="distance" value="5km"> Moins de 5 km</label>
+        <label><input type="checkbox" name="distance" value="10km"> Moins de 10 km</label>
+      </fieldset>
+    </details>
 
-  <button type="reset" class="reset-filters">Réinitialiser les filtres</button>
-</form>
+    <button type="reset" class="reset-filters">Réinitialiser les filtres</button>
+  </form>
+</div>
 
 <div class="list-header">
+  <p class="results-count">6 jardins trouvés • 112 résultats</p>
   <div class="view-toggle">
     <button class="active"><i class="fa fa-list"></i>Vue liste</button>
-    <button class="inactive"><i class="fa fa-map"></i>Vue carte</button>
+    <button class="inactive"><i class="fa fa-map"></i>Vue carte (Bientôt disponible)</button>
   </div>
-
-  <p class="results-count">6 jardins trouvés • 112 résultats</p>
 </div>
 
   <div class="grid">
@@ -97,8 +101,7 @@
     <article class="card">
       <div class="card-header">
         <h3 class="card-title">🌿 La Baleine Verte</h3>
-        <input type="checkbox" id="fav-1" class="favorite-checkbox" hidden>
-        <label for="fav-1" class="heart-btn"></label>
+        <button class="heart-btn" aria-label="Ajouter aux favoris"></button>
       </div>
       <p class="card-type">Jardin partagé - Paris 12ème</p>
       <hr class="divider">
@@ -114,7 +117,9 @@
           <li>📰 Ouvert depuis : 2012</li>
           <li>🏛️ Terrain : Ville de Paris</li>
         </ul>
-        <button class="cta-button">S'y rendre</button>
+        <a href="https://www.google.com/maps/search/?api=1&query=10+rue+Erard+Paris" target="_blank" rel="noopener" class="cta-button">
+          <i class="fa fa-location-arrow"></i> S'y rendre
+        </a>
       </div>
     </article>
 
@@ -122,8 +127,7 @@
     <article class="card">
       <div class="card-header">
         <h3 class="card-title">🌿 La Baleine Verte</h3>
-        <input type="checkbox" id="fav-1" class="favorite-checkbox" hidden>
-        <label for="fav-1" class="heart-btn"></label>
+        <button class="heart-btn" aria-label="Ajouter aux favoris"></button>
         </button>
       </div>
       <p class="card-type">Jardin partagé - Paris 12ème</p>
@@ -148,8 +152,7 @@
     <article class="card">
       <div class="card-header">
         <h3 class="card-title">🌿 La Baleine Verte</h3>
-        <input type="checkbox" id="fav-1" class="favorite-checkbox" hidden>
-        <label for="fav-1" class="heart-btn"></label>
+        <button class="heart-btn" aria-label="Ajouter aux favoris"></button>
       </div>
       <p class="card-type">Jardin partagé - Paris 12ème</p>
       <hr class="divider">
@@ -173,8 +176,7 @@
     <article class="card">
       <div class="card-header">
         <h3 class="card-title">🌿 La Baleine Verte</h3>
-        <input type="checkbox" id="fav-1" class="favorite-checkbox" hidden>
-        <label for="fav-1" class="heart-btn"></label>
+        <button class="heart-btn" aria-label="Ajouter aux favoris"></button>
       </div>
       <p class="card-type">Jardin partagé - Paris 12ème</p>
       <hr class="divider">
@@ -198,8 +200,7 @@
     <article class="card">
       <div class="card-header">
         <h3 class="card-title">🌿 La Baleine Verte</h3>
-        <input type="checkbox" id="fav-1" class="favorite-checkbox" hidden>
-        <label for="fav-1" class="heart-btn"></label>
+        <button class="heart-btn" aria-label="Ajouter aux favoris"></button>
       </div>
       <p class="card-type">Jardin partagé - Paris 12ème</p>
       <hr class="divider">
@@ -223,8 +224,7 @@
     <article class="card">
       <div class="card-header">
         <h3 class="card-title">🌿 La Baleine Verte</h3>
-        <input type="checkbox" id="fav-1" class="favorite-checkbox" hidden>
-        <label for="fav-1" class="heart-btn"></label>
+        <button class="heart-btn" aria-label="Ajouter aux favoris"></button>
       </div>
       <p class="card-type">Jardin partagé - Paris 12ème</p>
       <hr class="divider">
@@ -251,7 +251,7 @@
   <p>🌿 Les Jardins Partagés — Paris</p>
   <nav class="footer-links">
     <a href="index.html">Accueil</a>
-    <a href="favoris.html">Mes favoris</a>
+    <a href="#">Mes favoris</a>
     <a href="#">À propos</a>
     <a href="#">Contact</a>
   </nav>
