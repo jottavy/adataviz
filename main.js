@@ -1,14 +1,25 @@
 // Fetch + manipulation du DOM (pas testé)
-// ---------------------------------------
 
-// // import './style.css'
+// imports
+
+// import './style.css';
+import { texteCompteur } from './util'; 
+
+const afficherCompteurHTML = (combienAffiches, total) => {
+  const elementCompteur = document.querySelector('.results-count');
+  
+  // 🎯 On utilise l'outil pour obtenir le texte parfait
+  elementCompteur.textContent = texteCompteurexteCompteur(combienAffiches, total);
+};
 
 const chargerDonnees = async () => {
   try {
-    const data = await fetch('https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/jardins-partages/records?limit=200');
+    const data = await fetch('https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/jardins-partages/records?limit=20');
     if (!data.ok) throw new Error(`Le serveur de Paris a répondu avec un code ${data.status}`);
     const response = await data.json();
-    console.log(response.total_count);
+    
+    afficherCompteurHTML(response.results.length, response.total_count);
+
   } catch (error) {
     console.error("Échec :", error.message);
   }
