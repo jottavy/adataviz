@@ -1,35 +1,37 @@
-# Les Jardins Partagés
+# 🌿 Les Parcelliers
 
-Site vitrine listant les jardins partagés de Paris, avec recherche, filtres et gestion de favoris.
+> Site vitrine dynamique pour explorer et éventuellement rejoindre ces coins de verdure parisiens.
 
-## Fonctionnalités
+---
 
-- Liste des jardins avec détails dépliables (surface, année d'ouverture, gestionnaire)
-- Filtres multi-critères (arrondissement, animateurs, distance) avec compteur de sélection
-- Ajout de jardins en favoris
-- Page dédiée "Mes jardins favoris"
+## ✨ Fonctionnalités (V1)
 
-## Stack technique
+- **Cartes dynamiques** : Liste des jardins avec détails dépliables (gestionnaire, contacts, etc.).
+- **Compteur en temps réel** : Affichage dynamique du nombre de jardins récupérés en direct via l'API.
 
-- HTML / CSS / JavaScript (vanilla)
-- [Vite](https://vitejs.dev/) comme serveur de développement et bundler
-- [Font Awesome 4.7](https://fontawesome.com/v4/) pour les icônes
-- Polices [Eczar](https://fonts.google.com/specimen/Eczar) et [Work Sans](https://fonts.google.com/specimen/Work+Sans) via Google Fonts
+---
 
-## Lancer le projet en local
+## 🚀 Évolutions futures (V2)
 
-```bash
-npm install
-npm run dev
-```
+- **Filtres multi-critères** : Tri par arrondissement ou gestionnaire avec badges de sélection interactifs.
+- **Vue carte interactive** : Afficher la liste des résultats sur une carte interactive.
+- **Gestion de favoris** : Système de favoris pour sauvegarder des jardins préférés en local (LocalStorage) et d'une page dédiée.
 
-Puis ouvrir l'URL affichée dans le terminal (généralement `http://localhost:5173`).
+---
 
-## Structure du projet
+## 🛠️ Stack technique
 
-├── index.html # Page principale : liste des jardins
-├── favoris.html # Page des jardins favoris
-├── src/
-│ ├── main.js # Logique JS (détails dépliables, badges de filtres)
-│ └── style.css # Styles du site
-└── README.md
+- **Langages** : HTML5 / CSS3 / JavaScript (Vanilla)
+- **Bundler** : Vite
+- **Icons & Fonts** :
+  - Font Awesome 4.7 pour les icônes
+  - DM Sans & DM Mono via Google Fonts
+
+---
+
+## 📂 Structure
+
+- `index.html` : Structure sémantique principale de l'application (header, panneau de filtres, grille de résultats, footer).
+- `main.js` : Point d'entrée de l'application (initialisation, requêtes Fetch asynchrones, gestion globale).
+- `utils.js` : Fonctions utilitaires, formatage des données JSON (noms, arrondissements etc.) et fonction de création dynamique des cartes (`creerCarte`).
+- `style.css` : Charte graphique, mise en page responsive.

@@ -1,31 +1,41 @@
-// Fetch + manipulation du DOM (pas testé)
+// Fetch + manipulation du DOM
 
-// imports
-
+// Imports
 // import './style.css';
-import { texteCompteur } from './util'; 
+import { texteCompteur, creerCarte } from './utils.js'; 
 
-const afficherCompteurHTML = (combienAffiches, total) => {
+// Fonction d'affichage du texte compteur
+const afficherTexteCompteur = (combienAffiches, total) => {
   const elementCompteur = document.querySelector('.results-count');
   
-  // 🎯 On utilise l'outil pour obtenir le texte parfait
-  elementCompteur.textContent = texteCompteurexteCompteur(combienAffiches, total);
+  elementCompteur.textContent = texteCompteur(combienAffiches, total);
+  // console.log(`Texte compteur affiché : ${elementCompteur.textContent}`);
 };
+
+// Fonction pour charger les données depuis l'API et créer les cartes
 
 const chargerDonnees = async () => {
   try {
     const data = await fetch('https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/jardins-partages/records?limit=20');
-    if (!data.ok) throw new Error(`Le serveur de Paris a répondu avec un code ${data.status}`);
-    const response = await data.json();
+    if (!data.ok) throw new Error(`Le serveur de Paris a répondu avec un code ${data.status}`); // aide de l'IA pour le throw, veut dire "on saute tout le try et on va direct dans le catch" - gère le cas d'erreurs connues (404 )
+    const response = await data.json(); // Je transforme ensuite la réponse JSON en objet JavaScript
+    // console.table(response.results);
     
-    afficherCompteurHTML(response.results.length, response.total_count);
+    // Charge les données du compteur dans le DOM
+    afficherTexteCompteur(response.results.length, response.total_count); // combienAffiches = response.results.length, total = response.total_count
+
+    // Crée les cartes pour chaque jardin
+    const listeCartes = response.results; 
+    listeCartes.forEach(jardin => {
+      creerCarte(jardin);
+    });
 
   } catch (error) {
-    console.error("Échec :", error.message);
+    console.error("Échec :", error.message); // gère les cas d'erreurs venant de l'API
   }
 };
 
-chargerDonnees();
+chargerDonnees(); // Au chargement de la page, requête HTTP GET vers l'API
 
 // document.querySelectorAll('.heart-btn').forEach(btn => {
 //   btn.addEventListener('click', () => {
