@@ -1,5 +1,7 @@
 // Fetch + manipulation du DOM
 
+// Commentaire
+
 // Imports
 // import './style.css';
 import { texteCompteur, creerCarte } from './utils.js'; 
